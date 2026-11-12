@@ -1,0 +1,5 @@
+<header class="ems-topbar">
+  <button type="button" class="icon-button" data-ems-toggle aria-label="Toggle sidebar"><i class="bi bi-list"></i></button>
+  <div class="topbar-search"><i class="bi bi-search"></i><span>Employee management workspace</span></div>
+  <div class="topbar-actions"><span class="today-chip"><i class="bi bi-calendar3"></i> {{ now()->format('D, d M Y') }}</span><div class="dropdown"><button class="profile-trigger dropdown-toggle" data-bs-toggle="dropdown"><span class="user-avatar small-avatar">{{ strtoupper(substr(auth()->user()->name ?? 'A', 0, 1)) }}</span><span class="profile-name">{{ auth()->user()->name ?? 'Admin' }}</span></button><ul class="dropdown-menu dropdown-menu-end shadow border-0"><li><a class="dropdown-item" href="{{ route('profile.edit') }}"><i class="bi bi-person me-2"></i>My profile</a></li><li><hr class="dropdown-divider"></li><li><form method="POST" action="{{ route('logout') }}">@csrf<button class="dropdown-item text-danger"><i class="bi bi-box-arrow-right me-2"></i>Sign out</button></form></li></ul></div></div>
+</header>
